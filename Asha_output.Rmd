@@ -1,0 +1,67 @@
+---
+title: "Asha's Markdown Intro"
+author: "MCampbell"
+date: "24 April 2020"
+output: html_document
+---
+
+# General markdown tips courtesy of Rstudio
+
+Scroll down to the ASHA section for plots and stats and whatnot
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+
+## ASHA
+
+Welcome to your markdown file! Hooray!
+
+Some amazing scientists collected a heap of fish data. They've analysed it in R, a statistical programming language for tabular data, and the results are AMAZING. Wow!
+
+Here's an awesome plot which shows the distribution of species by ocean basin.
+
+```{r Fish-plot, echo=FALSE, message=FALSE, warning=FALSE, caption = "AN AWESOME FISH PLOT"}
+source("scripts/02_plot_fish_data.R")
+
+plot3
+```
+
+Results show that all of the fish found at depth "Bottom" are located in the Pacific Ocean.
+
+```{r Fish2-plot, echo=FALSE, message=FALSE, warning=FALSE, caption = "AN AWESOME FISH PLOT"}
+source("scripts/02_plot_fish_data.R")
+
+plot5
+```
+
+```{r lmrsq, echo=FALSE, message=FALSE, warning=FALSE}
+source("scripts/03_linear_models_on_fish_data.R")
+rsqfitnice <- paste("R^2^ = ", round(rsqfit2, 2))
+
+```
+
+Although all bottom dwelling fish were found in the Pacific Ocean, a linear model of all fish counts and location showed that location only described ~12% of the variance (`r rsqfitnice`).
+
+
+
+
+
+
